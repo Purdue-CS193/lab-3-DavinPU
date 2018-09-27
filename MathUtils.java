@@ -11,9 +11,7 @@ public class MathUtils {
     }
 
     public static void main(String[] args){
-        double x = divideNumbers(1,2);
-        System.out.println(x);
-        double result = raiseToPower(3, -3);
+        double result = raiseToPower(2, 16);
         System.out.println(result);
     }
 
@@ -23,7 +21,7 @@ public class MathUtils {
      */
     public static double raiseToPower(int base, int exp) {
         /* Set initial result to be just the number */
-        int res = base;
+        long res = base;
 
         /* Determine if the exponent is negative */
         boolean isNegative = false;
@@ -37,14 +35,14 @@ public class MathUtils {
 
         if (isNegative) {
             for (int i = 0; i > exp +1; i--){
-                res *= exp;
+                res *= base;
             }
 
             double dividedRes = divideNumbers(1, res);
             return dividedRes;
         }else{
             for (int i = 0; i < exp-1; i++) {
-                res *= exp;
+                res *= base;
             }
         }
 
